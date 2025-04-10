@@ -31,9 +31,9 @@ const createCharacterCard = (character) => {
 
   col.innerHTML = `
   <div class="mainCard card ">
-  <img src="${character.image}" class="card-img-top" alt="...">
+  <img src="${character.image}" class="card-img" alt="...">
   <div class="card-body d-flex flex-column">
-    <h5 class="card-title">${character.name}</h5>
+  <h5 class="card-title">${character.name}</h5>
    <button class="btn btn-success open-modal" data-character='${JSON.stringify(character)}'>Details</button>
   </div>
   </div>
@@ -71,12 +71,10 @@ function openModal(character) {
 function applyEasterEggs(character, modalBody, modalElement) {
   modalElement.querySelector('.modal-content').classList.add('alien-glow');
 
-  // Çok bölümlü karakterler
   if (character.episode.length > 10) {
     modalBody.innerHTML += `<div class="badge bg-danger mt-2">🏆 Multiverse Veteran</div>`;
   }
 
-  // Gizli ID'ler
   if ([8, 18, 28].includes(character.id)) {
     modalBody.innerHTML += `<p class="text-warning">🔥 Gizli bir karakter keşfettin! Bu bir Easter Egg!</p>`;
     new Audio('https://www.soundjay.com/buttons/sounds/button-35.mp3').play();
@@ -116,5 +114,5 @@ fetchCharacters();
 
 
 // 1. Debounce 500ms - 300ms okeyydir.!
-// 2. Karakter ayrıntıları için modal açılmalı.
-// 3. CSS olarak güzelleştirilmesi. Inputa animasyon eklenmesi
+// 2. Karakter ayrıntıları için modal açılmalı. okeyyy
+// 3. CSS olarak güzelleştirilmesi. Inputa animasyon eklenmesi okeyyy
